@@ -16,7 +16,16 @@
       "username": "jkowalski",
       "email": "jkowalski@gmail.com",
       "password": "123",
-      "role": "user"
+      "role": "user",
+      "id": 1
+    },
+    {
+      "name": "",
+      "username": "",
+      "email": "",
+      "password": "",
+      "role": "user",
+      "id": 2
     }
   ]
 }
