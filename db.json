@@ -1,3 +1,22 @@
 {
-    "posts": []
+  "posts": [
+    {
+      "title": "dsa",
+      "author": "Jakub",
+      "category": "Cat1",
+      "date": "2022-12-08",
+      "imageUrl": "dsad",
+      "content": "dsadsa",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "name": "Jan",
+      "username": "jkowalski",
+      "email": "jkowalski@gmail.com",
+      "password": "123",
+      "role": "user"
+    }
+  ]
 }

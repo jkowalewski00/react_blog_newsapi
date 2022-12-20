@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MDBValidation, MDBInput, MDBBtn, MDBTextArea } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 
 const initialState = {
     title: "",
@@ -20,13 +21,27 @@ const AddPost = () => {
     const [categoryErrMsg, setCategoryErrMsg] = useState<any | null>(null);
     const { title, author, category, date, imageUrl, content } = formValue;
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
+
         if (!category)
             setCategoryErrMsg("Select a category!");
+
+        if (title && author && category && date && content && imageUrl) {
+            const postData = { ...formValue };
+            const response = axios.post("http://localhost:5000/posts", postData);
+
+            // if (response.status === 201)
+            //     toast.success("Post created successfully!");
+            // else
+            //     toast.error("Something went wrong!");
+
+            setFormValue({ title: "", author: "", category: "", date: "", imageUrl: "", content: "" });
+            Navigate("/" as any);
+        }
     };
 
-    const onInputChange = (e: any) => {
+    const onTitleChange = (e: any) => {
         setFormValue({ ...formValue, title: e.target.value });
     };
 
@@ -49,13 +64,15 @@ const AddPost = () => {
         setFormValue({ ...formValue, content: e.target.value });
     };
 
-    const clearValues = (e: any) => { };
+    const clearValues = (e: any) => {
+        setFormValue({ title: "", author: "", category: "", date: "", imageUrl: "", content: "" });
+    };
 
     return (
         <MDBValidation className="row g-3" style={{ marginTop: "100px" }} noValidate onSubmit={handleSubmit}>
             <h2 className="fs-2 fw-bold">Add new post</h2>
             <div style={{ margin: "auto", display: "flex", width: "400px", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: " 10px" }}>
-                <MDBInput style={{ width: "400px" }} value={title} name="title" type="text" onChange={onInputChange} required label="Title" />
+                <MDBInput style={{ width: "400px" }} value={title} name="title" type="text" onChange={onTitleChange} required label="Title" />
                 <select style={{ width: "400px" }} className="authors-dropdown" value={author} name="author" onChange={onAuthorChange} required>
                     <option>Select author</option>
                     {authors.map((author, index) => (
