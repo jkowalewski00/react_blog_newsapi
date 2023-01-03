@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MDBValidation, MDBInput, MDBBtn, MDBTextArea } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 const initialState = {
     title: "",
@@ -19,7 +19,31 @@ const categories = ["Cat1", "Cat2", "Cat3", "Cat4", "Cat5", "Cat6"];
 const AddPost = () => {
     const [formValue, setFormValue] = useState(initialState);
     const [categoryErrMsg, setCategoryErrMsg] = useState<any | null>(null);
+    const [editMode, setEditMode] = useState<any | null>(null);
     const { title, author, category, date, imageUrl, content } = formValue;
+
+    const {id} = useParams();
+
+    useEffect(() => {
+        if(id){
+            setEditMode(true);
+            getSinglePost(id);
+        }
+        else{
+            setEditMode(false);
+            setFormValue({...initialState});
+        }
+    }, [id]);
+
+    const getSinglePost = async (id:string) => {
+        const singlePost = await axios.get(`http://localhost:5000/posts/${id}`);
+        if(singlePost.status === 200){
+            setFormValue({...singlePost.data});
+        }
+        else{
+            toast.error("Something went wrong!");
+        }
+    };
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -29,13 +53,16 @@ const AddPost = () => {
 
         if (title && author && category && date && content && imageUrl) {
             const postData = { ...formValue };
-            const response = axios.post("http://localhost:5000/posts", postData);
+            if(!editMode){
+                const response = await axios.post("http://localhost:5000/posts", postData);
 
-            // if (response.status === 201)
-            //     toast.success("Post created successfully!");
-            // else
-            //     toast.error("Something went wrong!");
-
+                if (response.status === 201)
+                    toast("Post created successfully!");
+                else
+                    toast("Something went wrong!");
+    
+            }
+            
             setFormValue({ title: "", author: "", category: "", date: "", imageUrl: "", content: "" });
             Navigate("/" as any);
         }
@@ -70,7 +97,7 @@ const AddPost = () => {
 
     return (
         <MDBValidation className="row g-3" style={{ marginTop: "100px" }} noValidate onSubmit={handleSubmit}>
-            <h2 className="fs-2 fw-bold">Add new post</h2>
+            <h2 className="fs-2 fw-bold">{editMode ? "Update post" : "Add post"}</h2>
             <div style={{ margin: "auto", display: "flex", width: "400px", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: " 10px" }}>
                 <MDBInput style={{ width: "400px" }} value={title} name="title" type="text" onChange={onTitleChange} required label="Title" />
                 <select style={{ width: "400px" }} className="authors-dropdown" value={author} name="author" onChange={onAuthorChange} required>
@@ -96,7 +123,7 @@ const AddPost = () => {
                 <MDBInput style={{ width: "400px" }} value={imageUrl} name="image-url" type="text" onChange={onImageUrlChange} required label="Image url" />
                 <MDBTextArea style={{ width: "400px", minHeight: "150px" }} value={content} name="content" onChange={onContentChange} required label="Content" />
                 <span>
-                    <MDBBtn style={{ margin: "10px", width: "120px" }} type="submit" color="primary">Add post</MDBBtn>
+                    <MDBBtn style={{ margin: "10px", width: "120px" }} type="submit" color="primary">{editMode ? "Update post" : "Add post"}</MDBBtn>
                     <MDBBtn style={{ margin: "10px", width: "120px" }} type="submit" color="danger" onClick={clearValues}>Cancel</MDBBtn>
                 </span>
 

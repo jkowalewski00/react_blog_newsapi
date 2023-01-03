@@ -25,14 +25,26 @@ const Home = () => {
 
     console.log("data", data)
 
-    const handleDelete = () => {};
+    const handleDelete = async (id:number) => {
+        if(window.confirm("Are you sure that you want to delete that post?")){
+            const response = await axios.delete(`http://localhost:5000/posts/${id}`);
+            if(response.status === 200){
+                window.confirm("Post deleted successfully!")
+                loadPostsData();
+            }
+            else(
+                toast.error("Something went wrong!")
+            )
+        }
+    };
 
     const excerpt = (str:string) => {
-        // if(str.length > 50){
-        //     str = str.substring(0, 50) + " ... "
-        // }
+        let len:number = str.length;
+        if(len > 50){
+            str = str.substring(0, 50) + " ... "
+        }
 
-        // return str;
+        return str;
     };
     
     return (
