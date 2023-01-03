@@ -5,10 +5,20 @@
       "author": "Jakub",
       "category": "Cat1",
       "date": "2022-12-08",
-      "imageUrl": "dsad",
+      "imageUrl": "https://ocdn.eu/rankings-content-transforms/1/8BMk9ktY2FyQ2F0YWxvZ3VlL2NmNWJlNDNhNTRjNjZmN2ZlYTdlMDUyMGExZDI3NjFjkpUDAc0CWM0LN80GTpMFzPrMh94AAqEwBaExAA",
       "content": "dsadsa",
       "id": 1
+    },
+    {
+      "title": "Testowy od zwyklego",
+      "author": "Jakub",
+      "category": "Cat2",
+      "date": "2023-01-03",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1280px-Image_created_with_a_mobile_phone.png",
+      "content": "asdgaskludfjahwsdflj",
+      "id": 2
     }
+    
   ],
   "users": [
     {
