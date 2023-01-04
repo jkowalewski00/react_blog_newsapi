@@ -62,6 +62,14 @@ const AddPost = () => {
                     toast("Something went wrong!");
     
             }
+            else{
+                const response = await axios.put(`http://localhost:5000/posts/${id}`, formValue);
+
+                if (response.status === 200)
+                    toast("Post updated successfully!");
+                else
+                    toast("Something went wrong!");
+            }
             
             setFormValue({ title: "", author: "", category: "", date: "", imageUrl: "", content: "" });
             Navigate("/" as any);
@@ -97,7 +105,7 @@ const AddPost = () => {
 
     return (
         <MDBValidation className="row g-3" style={{ marginTop: "100px" }} noValidate onSubmit={handleSubmit}>
-            <h2 className="fs-2 fw-bold">{editMode ? "Update post" : "Add post"}</h2>
+            <h2 className="fs-2 fw-bold">{editMode ? "Update" : "Add post"}</h2>
             <div style={{ margin: "auto", display: "flex", width: "400px", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: " 10px" }}>
                 <MDBInput style={{ width: "400px" }} value={title} name="title" type="text" onChange={onTitleChange} required label="Title" />
                 <select style={{ width: "400px" }} className="authors-dropdown" value={author} name="author" onChange={onAuthorChange} required>
@@ -123,7 +131,7 @@ const AddPost = () => {
                 <MDBInput style={{ width: "400px" }} value={imageUrl} name="image-url" type="text" onChange={onImageUrlChange} required label="Image url" />
                 <MDBTextArea style={{ width: "400px", minHeight: "150px" }} value={content} name="content" onChange={onContentChange} required label="Content" />
                 <span>
-                    <MDBBtn style={{ margin: "10px", width: "120px" }} type="submit" color="primary">{editMode ? "Update post" : "Add post"}</MDBBtn>
+                    <MDBBtn style={{ margin: "10px", width: "120px" }} type="submit" color="primary">{editMode ? "Update" : "Add post"}</MDBBtn>
                     <MDBBtn style={{ margin: "10px", width: "120px" }} type="submit" color="danger" onClick={clearValues}>Cancel</MDBBtn>
                 </span>
 
