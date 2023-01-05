@@ -6,22 +6,44 @@ import Posts from "../components/Posts";
 import { title } from 'process';
 import Search from '../components/Search';
 import Category from '../components/Category';
+import LatestPosts from '../components/LatestPosts';
+import Pagination from '../components/Pagination';
 
 const Home = () => {
     const [data, setData] = useState([]);
+    const [latestPost, setLatestPost] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+    const [currentPage, setCurrentPage] = useState(0);
+    const [totalPost, setTotalPost] = useState(null);
+    const [pageLimit] = useState(5);
 
     const categories = ["Cat1", "Cat2", "Cat3", "Cat4", "Cat5", "Cat6"];
 
     useEffect(() =>{
-        loadPostsData();
+        loadPostsData(0, 5, 0);
+        fetchLatestBlog();
     }, []
         )
 
-    const loadPostsData = async () => {
-        const response = await axios.get("http://localhost:5000/posts");
+    const loadPostsData = async (start:any, end:any, increase:any) => {
+        const response = await axios.get(`http://localhost:5000/posts?_start=${start}&_end=${end}`);
         if(response.status === 200){
             setData(response.data);
+            setCurrentPage(currentPage + increase);
+        }
+        else(
+            toast.error("Something went wrong!")
+        )
+    };
+
+    const fetchLatestBlog = async () => {
+        const totalPost = await axios.get("http://localhost:5000/posts");
+        setTotalPost(totalPost.data.length);
+        const start = totalPost.data.length - 4;
+        const end = totalPost.data.length;
+        const response = await axios.get(`http://localhost:5000/posts?_start=${start}&_end=${end}`);
+        if(response.status === 200){
+            setLatestPost(response.data);
         }
         else(
             toast.error("Something went wrong!")
@@ -102,9 +124,16 @@ const Home = () => {
                     </MDBContainer>
                 </MDBCol>
                 <MDBCol size="3">
+                    <h4 className="text-start">Latest posts</h4>
+                    {latestPost && latestPost.map((item:any, index:any) => (
+                        <LatestPosts key={index} {...item}/>
+                    ))}
                     <Category options={categories} handleCategory={handleCategory}/>
                 </MDBCol>
             </MDBRow>
+            <div className="mt-3">
+                <Pagination currentPage={currentPage} loadPostData={loadPostsData} pageLimit={pageLimit} data={data} totalPost={totalPost}/>
+            </div>
         </>
     )
 }
