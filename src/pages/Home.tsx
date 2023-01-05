@@ -20,16 +20,16 @@ const Home = () => {
     const categories = ["Cat1", "Cat2", "Cat3", "Cat4", "Cat5", "Cat6"];
 
     useEffect(() =>{
-        loadPostsData(0, 5, 0);
+        loadPostsData();
         fetchLatestBlog();
     }, []
         )
 
-    const loadPostsData = async (start:any, end:any, increase:any) => {
-        const response = await axios.get(`http://localhost:5000/posts?_start=${start}&_end=${end}`);
+    const loadPostsData = async () => {
+        const response = await axios.get(`http://localhost:5000/posts`);
         if(response.status === 200){
             setData(response.data);
-            setCurrentPage(currentPage + increase);
+            // setCurrentPage(currentPage + increase);
         }
         else(
             toast.error("Something went wrong!")
@@ -131,9 +131,9 @@ const Home = () => {
                     <Category options={categories} handleCategory={handleCategory}/>
                 </MDBCol>
             </MDBRow>
-            <div className="mt-3">
+            {/* <div className="mt-3">
                 <Pagination currentPage={currentPage} loadPostData={loadPostsData} pageLimit={pageLimit} data={data} totalPost={totalPost}/>
-            </div>
+            </div> */}
         </>
     )
 }
