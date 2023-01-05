@@ -7,7 +7,8 @@ import { toast } from 'react-toastify';
 
 const SinglePost = () => {
     const [post, setPost] = useState<any | null>(null);
-    const {id} = useParams();
+    const [relatedPost, setRelatedPost] = useState<any | null>([]);
+    const {id} = useParams(); 
 
     useEffect(() =>  {
         if(id){
@@ -17,13 +18,25 @@ const SinglePost = () => {
 
 const getSinglePost = async () => {
     const response = await axios.get(`http://localhost:5000/posts/${id}`);
-    if(response.status === 200){
+    const relatedPostData = await axios.get(`http://localhost:5000/posts?category=${response.data.category}&_start=0_end=3`); 
+    
+    if(response.status === 200 || relatedPostData.status === 200){
         setPost(response.data);
+        setRelatedPost(relatedPostData.data);
     }
     else{
         toast.error("Something went wrong!");
     }
     
+};
+
+const excerpt = (str:string) => {
+    let len:number = str.length;
+    if(len > 60){
+        str = str.substring(0, 60) + " ... "
+    }
+
+    return str;
 };
 
 const styleInfo = {
@@ -63,6 +76,34 @@ const styleInfo = {
                     {post && post.content}
                 </MDBTypography>
             </div>
+            {relatedPost && relatedPost.length > 0 && (
+                <>
+                    {relatedPost.length > 1 && <h1>Related posts</h1>}
+                    <MDBRow className="row-cols-1 row-cols-md-3 g-4">
+                        {relatedPost.filter((item:any) => item.id != id).map((item:any, index:any) => (
+                            <MDBCol>
+                                <MDBCard>
+                                    <Link to={`/post/${item.id}`}>
+                                        <MDBCardImage
+                                        src={item.imageUrl}
+                                        alt={item.title}
+                                        position="top"
+                                        />
+                                    </Link>
+                                    <MDBCardBody>
+                                        <MDBCardTitle>
+                                            {item.title}
+                                        </MDBCardTitle>
+                                        <MDBCardText>
+                                            {excerpt(item.content)}
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        ))}
+                    </MDBRow>
+                </>
+            )}
         </MDBContainer>
     )
 }

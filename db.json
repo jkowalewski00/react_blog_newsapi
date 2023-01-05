@@ -1,12 +1,12 @@
 {
   "posts": [
     {
-      "title": "dsa",
+      "title": "dsaasdasdasdasd",
       "author": "Jakub",
-      "category": "Cat1",
+      "category": "Cat6",
       "date": "2022-12-08",
       "imageUrl": "https://ocdn.eu/rankings-content-transforms/1/8BMk9ktY2FyQ2F0YWxvZ3VlL2NmNWJlNDNhNTRjNjZmN2ZlYTdlMDUyMGExZDI3NjFjkpUDAc0CWM0LN80GTpMFzPrMh94AAqEwBaExAA",
-      "content": "dsadsa",
+      "content": "Nulla a turpis et lorem mollis viverra ac in justo. Suspendisse nec lorem ac nisi accumsan suscipit et vitae arcu. Sed semper tempor leo, in imperdiet purus. Morbi luctus ligula eget diam mollis, et pharetra erat consectetur. Etiam quis nibh molestie, tempor elit sit amet, malesuada lorem. Sed vel nisi at magna tempus scelerisque sed sed orci. Cras viverra risus vitae eros congue vulputate. Phasellus lacinia odio a neque accumsan, in cursus magna hendrerit. Phasellus efficitur, lacus a fringilla pulvinar, enim nisi fringilla mi, viverra blandit lectus tortor vel neque. Nulla pharetra, enim eget blandit suscipit, quam erat finibus nunc, nec vulputate arcu purus a eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec eu quam finibus, consectetur nibh et, imperdiet sapien.",
       "id": 1
     },
     {
@@ -28,13 +28,22 @@
       "id": 3
     },
     {
-      "title": "Auto",
+      "title": "Auto Ford Focus",
       "author": "Marysia",
-      "category": "Cat4",
+      "category": "Cat3",
       "date": "2023-01-04",
       "imageUrl": "https://www.autocentrum.pl/ac-file/gallery-photo/56627178f80f0a96351bf50d/ford-fusion-2006.jpg",
-      "content": "ToastContainer",
+      "content": "Nulla a turpis et lorem mollis viverra ac in justo. Suspendisse nec lorem ac nisi accumsan suscipit et vitae arcu. Sed semper tempor leo, in imperdiet purus. Morbi luctus ligula eget diam mollis, et pharetra erat consectetur. Etiam quis nibh molestie, tempor elit sit amet, malesuada lorem. Sed vel nisi at magna tempus scelerisque sed sed orci. Cras viverra risus vitae eros congue vulputate. Phasellus lacinia odio a neque accumsan, in cursus magna hendrerit. Phasellus efficitur, lacus a fringilla pulvinar, enim nisi fringilla mi, viverra blandit lectus tortor vel neque. Nulla pharetra, enim eget blandit suscipit, quam erat finibus nunc, nec vulputate arcu purus a eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec eu quam finibus, consectetur nibh et, imperdiet sapien.",
       "id": 4
+    },
+    {
+      "title": "Testowy inna kategoria",
+      "author": "Mateusz",
+      "category": "Cat1",
+      "date": "2023-01-05",
+      "imageUrl": "https://www.wykop.pl/cdn/c3201142/comment_LXEkCaFvN9YsuoIupHL44lKufP8xxD1D,w400.jpg",
+      "content": "Cras tempor erat non nibh aliquet, non tincidunt tortor feugiat. Proin nec mi accumsan velit auctor lobortis nec nec quam. Pellentesque sollicitudin luctus eros. Suspendisse est felis, consequat nec imperdiet at, mollis sed diam. Etiam sapien lectus, tempor accumsan ultricies eu, tincidunt sit amet odio. Vestibulum pharetra varius est vel interdum. Morbi consectetur, odio ut facilisis tincidunt, diam nisl condimentum est, sit amet porta lorem erat quis mi. Aliquam maximus felis vel tellus sodales consequat. Ut egestas suscipit hendrerit. Proin nisi nulla, convallis fringilla placerat a, suscipit quis mauris. Vivamus tristique orci non nunc placerat accumsan.",
+      "id": 5
     }
   ],
   "users": [
