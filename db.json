@@ -29,7 +29,7 @@
     },
     {
       "title": "Auto Ford Focus",
-      "author": "Marysia",
+      "author": "Mateusz",
       "category": "Cat3",
       "date": "2023-01-04",
       "imageUrl": "https://www.autocentrum.pl/ac-file/gallery-photo/56627178f80f0a96351bf50d/ford-fusion-2006.jpg",
@@ -44,6 +44,15 @@
       "imageUrl": "https://www.wykop.pl/cdn/c3201142/comment_LXEkCaFvN9YsuoIupHL44lKufP8xxD1D,w400.jpg",
       "content": "Cras tempor erat non nibh aliquet, non tincidunt tortor feugiat. Proin nec mi accumsan velit auctor lobortis nec nec quam. Pellentesque sollicitudin luctus eros. Suspendisse est felis, consequat nec imperdiet at, mollis sed diam. Etiam sapien lectus, tempor accumsan ultricies eu, tincidunt sit amet odio. Vestibulum pharetra varius est vel interdum. Morbi consectetur, odio ut facilisis tincidunt, diam nisl condimentum est, sit amet porta lorem erat quis mi. Aliquam maximus felis vel tellus sodales consequat. Ut egestas suscipit hendrerit. Proin nisi nulla, convallis fringilla placerat a, suscipit quis mauris. Vivamus tristique orci non nunc placerat accumsan.",
       "id": 5
+    },
+    {
+      "title": "Dacia Dokker",
+      "author": "Marysia",
+      "category": "Cat3",
+      "date": "2023-01-06",
+      "imageUrl": "https://a.allegroimg.com/s1024/0c8c18/b508fc8c4495bfd37437ac7ff100",
+      "content": "Phasellus ac porttitor enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget faucibus arcu, blandit finibus arcu. Duis sollicitudin elementum tortor, ut lobortis justo varius eu. Vivamus feugiat erat non dui scelerisque euismod. Sed viverra metus vitae tellus semper fringilla. Maecenas sit amet ex ipsum. Donec sed leo sed massa interdum ultricies. Nam ultricies leo a sapien lacinia dapibus. In vel leo magna.",
+      "id": 6
     }
   ],
   "users": [

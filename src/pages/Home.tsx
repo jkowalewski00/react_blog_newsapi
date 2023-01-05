@@ -4,9 +4,14 @@ import {MDBRow, MDBCol, MDBContainer, MDBTypography} from "mdb-react-ui-kit"
 import { toast } from 'react-toastify';
 import Posts from "../components/Posts";
 import { title } from 'process';
+import Search from '../components/Search';
+import Category from '../components/Category';
 
 const Home = () => {
     const [data, setData] = useState([]);
+    const [searchValue, setSearchValue] = useState("");
+
+    const categories = ["Cat1", "Cat2", "Cat3", "Cat4", "Cat5", "Cat6"];
 
     useEffect(() =>{
         loadPostsData();
@@ -46,29 +51,61 @@ const Home = () => {
 
         return str;
     };
+
+    const onInputChange = (e:any) => {
+        if(!e.target.value){
+            loadPostsData();
+        }
+        setSearchValue(e.target.value); 
+    };
+
+    const handleSearch = async (e:any) => {
+        e.preventDefault();
+        const response = await axios.get(`http://localhost:5000/posts?q=${searchValue}`);
+        if(response.status === 200){
+            setData(response.data);
+        }else {
+            toast.error("Something went wrong!");
+        }
+    };
+
+    const handleCategory = async (category:any) => {
+        const response = await axios.get(`http://localhost:5000/posts?category=${category}`);
+        if(response.status === 200){
+            setData(response.data);
+        } else {
+            toast.error("Something went wrong!");
+        }
+    };
     
     return (
-        <MDBRow>
-            {data.length === 0 && (
-                <MDBTypography className="text-center mb-0" tag="h2">
-                    No posts found
-                </MDBTypography>
-            )}
-            <MDBCol>
-                <MDBContainer>
-                    <MDBRow>
-                        {data && data.map((item:any, index) => (
-                            <Posts 
-                            key={index}
-                            {...item}
-                            excerpt={excerpt}
-                            handleDelete={handleDelete}
-                            />
-                        ))}
-                    </MDBRow>
-                </MDBContainer>
-            </MDBCol>
-        </MDBRow>
+        <>
+            <Search searchValue={searchValue} onInputChange={onInputChange} handleSearch={handleSearch}/>
+            <MDBRow>
+                {data.length === 0 && (
+                    <MDBTypography className="text-center mb-0" tag="h2">
+                        No posts found
+                    </MDBTypography>
+                )}
+                <MDBCol>
+                    <MDBContainer>
+                        <MDBRow>
+                            {data && data.map((item:any, index) => (
+                                <Posts 
+                                key={index}
+                                {...item}
+                                excerpt={excerpt}
+                                handleDelete={handleDelete}
+                                />
+                            ))}
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBCol>
+                <MDBCol size="3">
+                    <Category options={categories} handleCategory={handleCategory}/>
+                </MDBCol>
+            </MDBRow>
+        </>
     )
 }
 

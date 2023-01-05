@@ -49,3 +49,10 @@ h1::after{
   left: 0.5em;
   margin-right: -50%;
 }
+
+.searchForm{
+  margin:auto;
+  padding: 15px;
+  max-width: 550px;
+  align-content: center;
+}
