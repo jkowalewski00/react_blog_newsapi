@@ -10,20 +10,11 @@
       "id": 1
     },
     {
-      "title": "Testowy ",
-      "author": "Marysia",
-      "category": "Cat6",
-      "date": "2023-01-03",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1280px-Image_created_with_a_mobile_phone.png",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in commodo diam. Phasellus vehicula dui id sagittis bibendum. Aenean ac urna vel velit dignissim ullamcorper ac et orci. Integer posuere erat et fermentum placerat. Suspendisse molestie, leo a rhoncus laoreet, ex eros rhoncus sapien, vitae maximus justo turpis in lorem. Fusce porta enim vitae tortor luctus, ultricies malesuada neque interdum. Curabitur ultricies elit sed tortor egestas, ac ultrices lectus cursus. Sed porttitor, ipsum ut pellentesque luctus, sapien dolor sagittis leo, laoreet imperdiet purus nisi et ex. Cras vitae diam urna. Nullam vitae feugiat lectus.",
-      "id": 2
-    },
-    {
       "title": "XYZXYZ",
       "author": "Jakub",
-      "category": "Cat3",
+      "category": "Cat2",
       "date": "2023-01-03",
-      "imageUrl": "https://media.licdn.com/dms/image/C4D03AQGEj9y49zVwCw/profile-displayphoto-shrink_800_800/0/1516971172012?e=1678320000&v=beta&t=prTBxB1FPQ53NF49JCUjK_VOIAncoBo5V8VqKbaEMOs",
+      "imageUrl": "https://ocdn.eu/pulscms-transforms/1/8Lxk9kpTURBXy83ZmI0ZjU3MmYxNDhlMDI5NTUxODQ4MDg0OTM4ZTVmMC5qcGeTlQMAzKHNFEDNC2STBc0DFM0BvJMJpjZiYWI5ZgbeAAGhMAU/domowa-pizza.webp",
       "content": "Suspendisse potenti. Maecenas a tortor vel neque ultrices euismod ac vel sem. Nulla facilisi. Cras viverra faucibus ex, at lobortis nibh tristique sed. Nam nulla mi, viverra eu neque ut, auctor ullamcorper elit. Vestibulum volutpat blandit fringilla. Pellentesque porta ex quis neque posuere fermentum. Sed porta risus vitae malesuada tristique. Aenean in fermentum libero, at cursus orci. Duis tristique nulla quis nibh gravida sollicitudin.",
       "id": 3
     },
@@ -37,15 +28,6 @@
       "id": 4
     },
     {
-      "title": "Testowy inna kategoria",
-      "author": "Mateusz",
-      "category": "Cat1",
-      "date": "2023-01-05",
-      "imageUrl": "https://www.wykop.pl/cdn/c3201142/comment_LXEkCaFvN9YsuoIupHL44lKufP8xxD1D,w400.jpg",
-      "content": "Cras tempor erat non nibh aliquet, non tincidunt tortor feugiat. Proin nec mi accumsan velit auctor lobortis nec nec quam. Pellentesque sollicitudin luctus eros. Suspendisse est felis, consequat nec imperdiet at, mollis sed diam. Etiam sapien lectus, tempor accumsan ultricies eu, tincidunt sit amet odio. Vestibulum pharetra varius est vel interdum. Morbi consectetur, odio ut facilisis tincidunt, diam nisl condimentum est, sit amet porta lorem erat quis mi. Aliquam maximus felis vel tellus sodales consequat. Ut egestas suscipit hendrerit. Proin nisi nulla, convallis fringilla placerat a, suscipit quis mauris. Vivamus tristique orci non nunc placerat accumsan.",
-      "id": 5
-    },
-    {
       "title": "Dacia Dokker",
       "author": "Marysia",
       "category": "Cat3",
@@ -53,6 +35,15 @@
       "imageUrl": "https://a.allegroimg.com/s1024/0c8c18/b508fc8c4495bfd37437ac7ff100",
       "content": "Phasellus ac porttitor enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget faucibus arcu, blandit finibus arcu. Duis sollicitudin elementum tortor, ut lobortis justo varius eu. Vivamus feugiat erat non dui scelerisque euismod. Sed viverra metus vitae tellus semper fringilla. Maecenas sit amet ex ipsum. Donec sed leo sed massa interdum ultricies. Nam ultricies leo a sapien lacinia dapibus. In vel leo magna.",
       "id": 6
+    },
+    {
+      "title": "Frytki",
+      "author": "Marysia",
+      "category": "Cat2",
+      "date": "2023-01-10",
+      "imageUrl": "https://bi.im-g.pl/im/93/a3/19/z26884499IH,Frytki.jpg",
+      "content": "AAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "id": 7
     }
   ],
   "users": [

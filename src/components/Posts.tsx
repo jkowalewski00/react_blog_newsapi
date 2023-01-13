@@ -12,7 +12,6 @@ interface PostsTypes{
     id:number,
     excerpt:any,
     handleDelete:any,
-    
 }
 
 const Posts = ({title, author, category, date, imageUrl, content, excerpt, handleDelete, id} : PostsTypes) =>{

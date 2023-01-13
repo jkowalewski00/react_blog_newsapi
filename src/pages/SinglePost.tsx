@@ -39,12 +39,12 @@ const excerpt = (str:string) => {
     return str;
 };
 
-const styleInfo = {
-    display: "inline",
-    marginLeft: "5px",
-    float: "right",
-    marginTop: "7px" 
-}
+// const styleInfo = {
+//     display: "inline",
+//     marginLeft: "5px",
+//     float: "right",
+//     marginTop: "7px" 
+// }
 
     return (
         <MDBContainer style={{border: "1px solid #d1ebe8"  }}>

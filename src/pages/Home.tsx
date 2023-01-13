@@ -13,9 +13,9 @@ const Home = () => {
     const [data, setData] = useState([]);
     const [latestPost, setLatestPost] = useState([]);
     const [searchValue, setSearchValue] = useState("");
-    const [currentPage, setCurrentPage] = useState(0);
+    // const [currentPage, setCurrentPage] = useState(0);
     const [totalPost, setTotalPost] = useState(null);
-    const [pageLimit] = useState(5);
+    // const [pageLimit] = useState(5);
 
     const categories = ["Cat1", "Cat2", "Cat3", "Cat4", "Cat5", "Cat6"];
 
