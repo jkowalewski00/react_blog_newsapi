@@ -54,6 +54,7 @@ function News() {
           <h2>{article['title']}</h2>
           <p>{article['description']}</p>
           <img height="150" src={article['urlToImage']} alt={article['title']}/>
+        <footer>Source: {article['source']['name']}</footer>
         </div>
       ))}
     </div>
