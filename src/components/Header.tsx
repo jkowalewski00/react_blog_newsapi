@@ -43,6 +43,9 @@ const Header = () => {
                             <MDBNavbarItem>
                                 <MDBNavbarLink href='/about-us'>About us</MDBNavbarLink>
                             </MDBNavbarItem>
+                            <MDBNavbarItem>
+                                <MDBNavbarLink href='/news'>News</MDBNavbarLink>
+                            </MDBNavbarItem>
                             {/* <MDBNavbarItem>
                             <MDBNavbarLink href='#'>About</MDBNavbarLink>
                         </MDBNavbarItem> */}
