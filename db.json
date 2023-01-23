@@ -44,6 +44,15 @@
       "imageUrl": "https://bi.im-g.pl/im/93/a3/19/z26884499IH,Frytki.jpg",
       "content": "AAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "id": 7
+    },
+    {
+      "title": "Test",
+      "author": "Marysia",
+      "category": "Cat2",
+      "date": "2023-01-05",
+      "imageUrl": "https://2.bp.blogspot.com/-8P_iI3YueO0/T73feHn5VSI/AAAAAAAAAiw/N5N3HmVmk9I/s320/6a00d834516a0869e2016760f339c3970b-800wi.jpg",
+      "content": "aaaaaaaaaaaaaaa",
+      "id": 8
     }
   ],
   "users": [
