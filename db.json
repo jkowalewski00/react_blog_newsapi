@@ -71,6 +71,14 @@
       "password": "",
       "role": "user",
       "id": 2
+    },
+    {
+      "name": "kevvol",
+      "username": "kevvol",
+      "email": "kevvol@wp.pl",
+      "password": "Kuba2520",
+      "role": "user",
+      "id": 3
     }
   ]
 }
