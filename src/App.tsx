@@ -28,7 +28,6 @@ function App() {
           <Route path="/edit-post/:id" element={<AddPost />} />
           <Route path="/about-us" element={<AboutUs />} />
 
-          {/* <Route path="/api" element={<Api />} />  */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
