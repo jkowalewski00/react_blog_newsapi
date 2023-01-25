@@ -79,6 +79,14 @@
       "password": "Kuba2520",
       "role": "user",
       "id": 3
+    },
+    {
+      "name": "ziemniak",
+      "username": "ziemniak",
+      "email": "ziemniak@wp.pl",
+      "password": "ziemniak1",
+      "role": "user",
+      "id": 4
     }
   ]
 }
